@@ -17,18 +17,22 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" 
     xmlns:tools="http://schemas.android.come/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
     android:orientation="horizontal">
-    
-	<EditText android:id="@+id/edit_message" android:layout_weight="2"
+        
+        <EditText android:id="@+id/edit_header" android:layout_weight="2"
 	    android:layout_width="0dp"
 	    android:layout_height="wrap_content"
-	    android:hint="@string/edit_message" />
+	    android:hint="@string/edit_header" />
+        
+        <EditText android:id="@+id/edit_body" android:layout_weight="2"
+	    android:layout_width="0dp"
+	    android:layout_height="wrap_content"
+	    android:hint="@string/edit_body" />
 	
-	<Button android:layout_width="wrap_content"
-	    	android:layout_height="wrap_content"
-	    	android:hint="@string/button_send" 
-	    	android:onClick="sendMessage"/>
-	    
+		<Button android:layout_width="wrap_content"
+		    	android:layout_height="wrap_content"
+		    	android:hint="@string/button_add" 
+		    	android:onClick="addNote"/>
 </LinearLayout>
