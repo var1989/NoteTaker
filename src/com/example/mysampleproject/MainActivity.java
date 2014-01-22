@@ -2,15 +2,12 @@ package com.example.mysampleproject;
 
 import java.io.IOException;
 import java.io.OutputStreamWriter;
-import java.sql.Savepoint;
-import java.text.DateFormat;
 import java.util.Calendar;
-import java.util.Date;
 
-import android.os.Bundle;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
@@ -67,13 +64,13 @@ public class MainActivity extends Activity {
     {
     	Boolean status = false;
     	Calendar timeStamp = Calendar.getInstance();
-    	String file_name = subject +""+ timeStamp.getTime().toString()+".txt";
+    	String file_name = subject +".txt";
     	
     	Log.i(EXTRA_MESSAGE,"Inside SaveFile() before opening the outputstream with filename -->"+file_name);
     	StringBuilder sb = new StringBuilder();
     	
     	sb.append("HEADER :"+subject);
-    	sb.append("\nTIME :"+timeStamp);
+    	sb.append("\nTIME :"+timeStamp.getTimeInMillis());
     	sb.append("\nBODY :"+body);	
     	try
     	{
@@ -87,5 +84,12 @@ public class MainActivity extends Activity {
 		}
     	
     	return status;
+    }
+    
+    public void showAll(View view) {
+    	Log.i("MM_Logs","showing all items screen");
+    	
+    	Intent intent =  new Intent(this,DisplayMessageActivity.class);
+    	startActivity(intent);
     }
 }
