@@ -10,5 +10,6 @@
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_display_message">DisplayMessageActivity</string>
     <string name="msg_Display">No Messages to Display</string>
+    <string name="button_show">Show All</string>
 
 </resources>
