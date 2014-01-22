@@ -2,8 +2,16 @@ package com.example.mysampleproject;
 
 import java.io.IOException;
 import java.io.OutputStreamWriter;
+import java.lang.reflect.Field;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.GregorianCalendar;
+import java.util.Locale;
+import java.util.TimeZone;
 
+import android.nfc.FormatException;
+import android.provider.MediaStore.Files;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -11,7 +19,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ListAdapter;
+import android.widget.ListView;
 import android.widget.Toast;
 
 
@@ -24,6 +35,8 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        
+        
     }
 
 
@@ -43,7 +56,7 @@ public class MainActivity extends Activity {
     	EditText editText_body = (EditText) findViewById(R.id.edit_body);
     	String message_header = editText_header.getText().toString();
     	String message_body = editText_body.getText().toString();
-    	//intent.putExtra(EXTRA_MESSAGE,message);
+    	//intent.putExtra(EXTRA_MESSAGE,);
     	Log.i("myApp", "before calling SaveFile()");
     	status =  SaveFile(message_header,message_body );
     	if(status== true)
@@ -68,10 +81,10 @@ public class MainActivity extends Activity {
     	
     	Log.i(EXTRA_MESSAGE,"Inside SaveFile() before opening the outputstream with filename -->"+file_name);
     	StringBuilder sb = new StringBuilder();
-    	
     	sb.append("HEADER :"+subject);
     	sb.append("\nTIME :"+timeStamp.getTimeInMillis());
     	sb.append("\nBODY :"+body);	
+    	Log.i("File content",sb.toString());
     	try
     	{
 	    	OutputStreamWriter outputStreamWriter = new OutputStreamWriter(openFileOutput(file_name,Context.MODE_PRIVATE));
