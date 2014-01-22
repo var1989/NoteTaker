@@ -30,6 +30,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.mysampleproject.MainActivity" />
         </activity>
+        <activity
+            android:name="com.example.mysampleproject.DisplayOneMessage"
+            android:label="@string/title_activity_display_one_message" >
+        </activity>
     </application>
 
 </manifest>
