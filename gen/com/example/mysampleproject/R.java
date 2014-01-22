@@ -52,6 +52,7 @@ public final class R {
         public static final int hello_world=0x7f050002;
         public static final int msg_Display=0x7f050008;
         public static final int title_activity_display_message=0x7f050007;
+        public static final int title_activity_display_one_message=0x7f05000a;
         public static final int title_activity_main=0x7f050006;
     }
     public static final class style {
